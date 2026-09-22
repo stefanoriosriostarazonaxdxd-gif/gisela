@@ -123,6 +123,70 @@
     text-shadow: 0 0 5px #00f5d4;
   }
 
+  /* Ramo de Flores Amarillas con Efectos CSS */
+  .bouquet-container {
+    margin: 20px auto;
+    position: relative;
+    width: 220px;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: bouquetGlow 2.5s infinite alternate ease-in-out;
+  }
+
+  @keyframes bouquetGlow {
+    0% { transform: scale(0.98); filter: drop-shadow(0 0 15px rgba(255, 230, 0, 0.5)); }
+    100% { transform: scale(1.05); filter: drop-shadow(0 0 30px rgba(255, 230, 0, 0.9)); }
+  }
+
+  .bouquet-wrapper {
+    position: relative;
+    font-size: 85px;
+    line-height: 1;
+    z-index: 2;
+  }
+
+  .bouquet-flowers {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+    font-size: 50px;
+    z-index: 1;
+    animation: flowersPulse 1.8s infinite alternate;
+  }
+
+  @keyframes flowersPulse {
+    from { transform: translateX(-50%) translateY(0) scale(1); }
+    to { transform: translateX(-50%) translateY(-8px) scale(1.1); }
+  }
+
+  .sparkles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .sparkle {
+    position: absolute;
+    font-size: 20px;
+    animation: sparkleTwinkle 1.5s infinite alternate;
+  }
+
+  .sp-1 { top: 10%; left: 10%; animation-delay: 0.2s; }
+  .sp-2 { top: 15%; right: 10%; animation-delay: 0.6s; }
+  .sp-3 { bottom: 25%; left: 15%; animation-delay: 1s; }
+  .sp-4 { bottom: 20%; right: 15%; animation-delay: 0.4s; }
+
+  @keyframes sparkleTwinkle {
+    0% { opacity: 0.3; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1.3); }
+  }
+
   .fade { animation: animePop 0.6s ease; }
 </style>
 </head>
@@ -170,8 +234,21 @@
 <!-- PANTALLA 5 -->
 <div class="card hidden" id="s5">
   <h1>🌻 ¡FELIZ DÍA DE LAS FLORES AMARILLAS! 🌻</h1>
+
+  <!-- Ramo de Flores Amarillas Interactivo -->
+  <div class="bouquet-container">
+    <div class="sparkles">
+      <span class="sparkle sp-1">✨</span>
+      <span class="sparkle sp-2">⭐</span>
+      <span class="sparkle sp-3">✨</span>
+      <span class="sparkle sp-4">🌟</span>
+    </div>
+    <div class="bouquet-flowers">🌻🌼🌻</div>
+    <div class="bouquet-wrapper">💐</div>
+  </div>
+
   <p class="center" style="font-size:1.15rem; color:#fff263; margin-top:15px;">
-    Espero que te guste mucho esta sorpresa digital.<br>
+    Espero que te guste mucho esta sorpresa digital y tu ramo de flores.<br>
     ¡Te mando un abrazo enorme y mis mejores deseos siempre! 💛✨
   </p>
   <p class="center mono" style="color:#00f5d4; margin-top:25px;">— con cariño, tu sobrino Stefano (UwU)</p>
